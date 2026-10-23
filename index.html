@@ -8,7 +8,6 @@
 </head>
 <body>
 
-  
   <header>
     <img src="images/vh 1.jpg" alt="Logo Nour Academy" class="logo">
     <div class="titre">
@@ -22,137 +21,116 @@
     </ul>
   </header>
 
-
   <main>
-    <h2 class="badge">Catalogue des cours</h2>
-    <p class="compteur">8 cours disponibles</p>
-
-    <section class="cours">
-
-      <div class="carte">
-        <h3>Maths</h3>
-        <p>Collège</p>
-        <p>Lundi 17h-19h</p>
-        <p>350 MAD / mois</p>
-        <p>8 places restantes</p>
-        <button>Ajouter</button>
-      </div>
-
-      <div class="carte">
-        <h3>Physique</h3>
-        <p>2e Bac</p>
-        <p>Mercredi 17h-19h</p>
-        <p>450 MAD / mois</p>
-        <p>Complet</p>
-        <button disabled>Complet</button>
-      </div>
-
-      <div class="carte">
-        <h3>Chimie</h3>
-        <p>Lycée</p>
-        <p>Jeudi 16h-18h</p>
-        <p>400 MAD / mois</p>
-        <p>6 places restantes</p>
-        <button>Ajouter</button>
-      </div>
-
-      <div class="carte">
-        <h3>Français</h3>
-        <p>Primaire</p>
-        <p>Samedi 10h-12h</p>
-        <p>250 MAD / mois</p>
-        <p>10 places restantes</p>
-        <button>Ajouter</button>
-      </div>
-
-      <div class="carte">
-        <h3>Anglais</h3>
-        <p>Lycée</p>
-        <p>Lundi 18h-19h30</p>
-        <p>300 MAD / mois</p>
-        <p>12 places restantes</p>
-        <button>Ajouter</button>
-      </div>
-
-      <div class="carte">
-        <h3>SVT</h3>
-        <p>2e Bac</p>
-        <p>Vendredi 17h-19h</p>
-        <p>400 MAD / mois</p>
-        <p>Complet</p>
-        <button disabled>Complet</button>
-      </div>
-
-      <div class="carte">
-        <h3>Arabe</h3>
-        <p>Primaire</p>
-        <p>Dimanche 10h-12h</p>
-        <p>250 MAD / mois</p>
-        <p>11 places restantes</p>
-        <button>Ajouter</button>
-      </div>
-
-      <div class="carte">
-        <h3>Informatique</h3>
-        <p>Collège</p>
-        <p>Mardi 16h-17h30</p>
-        <p>350 MAD / mois</p>
-        <p>3 places restantes</p>
-        <button>Ajouter</button>
-      </div>
-
-    </section>
 
     
-    <form class="reservation">
-      <h2>Reservation</h2>
-      <p class="aide">Remplissez le formulaire ci-dessous pour réserver les cours pour vos enfants.</p>
+    <section aria-labelledby="titre-catalogue">
+      <h2 class="badge" id="titre-catalogue">Catalogue des cours</h2>
 
-      <label for="matiere">Matiere *</label>
-      <select id="matiere" required>
-        <option value="">Choisissez une Matiere</option>
-        <option>Maths</option>
-        <option>Physique</option>
-        <option>Chimie</option>
-        <option>Français</option>
-        <option>Anglais</option>
-        <option>SVT</option>
-        <option>Arabe</option>
-        <option>Informatique</option>
-      </select>
+      <div class="filtres">
+        <div class="champ-filtre">
+          <label for="filtre-niveau">Niveau</label>
+          <select id="filtre-niveau">
+            <option value="">Tous les niveaux</option>
+            <option value="Primaire">Primaire</option>
+            <option value="Collège">Collège</option>
+            <option value="Lycée">Lycée</option>
+            <option value="2e Bac">2e Bac</option>
+          </select>
+        </div>
 
-      <label for="niveau">Niveau Scolaire *</label>
-      <select id="niveau" required>
-        <option value="">Choisissez le Niveau Scolaire</option>
-        <option>Primaire</option>
-        <option>Collège</option>
-        <option>Lycée</option>
-        <option>2e Bac</option>
-      </select>
-
-      <label for="nom">Nom *</label>
-      <input type="text" id="nom" placeholder="Votre nom" required>
-
-      <label for="prenom">Prénom *</label>
-      <input type="text" id="prenom" placeholder="Votre prénom" required>
-
-      <label for="email">Email *</label>
-      <input type="email" id="email" placeholder="Votre adresse email" required>
-
-      <label for="tel">Téléphone *</label>
-      <input type="tel" id="tel" placeholder="+212 6 12 34 56 78" required>
-
-      <div class="cgv">
-        <input type="checkbox" id="cgv" required>
-        <label for="cgv">J'accepte les conditions générales de vente *</label>
+        <div class="champ-filtre">
+          <label for="filtre-matiere">Matière</label>
+          <select id="filtre-matiere">
+            <option value="">Toutes les matières</option>
+            <option value="Maths">Maths</option>
+            <option value="Physique">Physique</option>
+            <option value="Chimie">Chimie</option>
+            <option value="Français">Français</option>
+            <option value="Anglais">Anglais</option>
+            <option value="SVT">SVT</option>
+            <option value="Arabe">Arabe</option>
+            <option value="Informatique">Informatique</option>
+          </select>
+        </div>
       </div>
 
-      <button type="submit" class="valider">Valider la réservation →</button>
-    </form>
-  </main>
+      <p class="compteur" id="compteur" aria-live="polite"></p>
+      <p class="aucun-resultat" id="aucun-resultat" hidden>Aucun cours ne correspond à votre recherche.</p>
+
+      <div class="cours" id="liste-cours"></div>
+    </section>
+
+ 
+    <section class="selection" aria-labelledby="titre-selection">
+      <h2 id="titre-selection">Ma sélection</h2>
+      <p class="selection-vide" id="selection-vide">Aucun cours sélectionné.</p>
+      <ul id="liste-selection"></ul>
+      <p class="total">Total mensuel : <strong id="total">0 MAD</strong></p>
+    </section>
 
   
-   <footer>
+    <form class="reservation" id="form-inscription" novalidate>
+      <h2>Inscription</h2>
+      <p class="aide">Remplissez le formulaire ci-dessous pour inscrire votre enfant. Tous les champs sont obligatoires.</p>
+
+      <label for="nom">Nom du parent</label>
+      <input type="text" id="nom" name="nom" placeholder="Votre nom" autocomplete="family-name">
+      <small class="message" id="nom-msg"></small>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="exemple@email.com" autocomplete="email">
+      <small class="message" id="email-msg"></small>
+
+      <label for="tel">Téléphone</label>
+      <input type="tel" id="tel" name="tel" placeholder="06 12 34 56 78 ou +212 6 12 34 56 78" autocomplete="tel">
+      <small class="message" id="tel-msg"></small>
+
+      <label for="prenom">nom complet de l'élève</label>
+      <input type="text" id="prenom" name="prenom" placeholder="nom complet de l'élève">
+      <small class="message" id="prenom-msg"></small>
+
+      <label for="niveau">Niveau de l'élève</label>
+      <select id="niveau" name="niveau">
+        <option value="">Choisissez le niveau</option>
+        <option value="Primaire">Primaire</option>
+        <option value="Collège">Collège</option>
+        <option value="Lycée">Lycée</option>
+        <option value="2e Bac">2e Bac</option>
+      </select>
+      <small class="message" id="niveau-msg"></small>
+
+      <label for="mdp">Mot de passe</label>
+      <input type="password" id="mdp" name="mdp" placeholder="8 caractères minimum" autocomplete="new-password">
+      <small class="message" id="mdp-msg"></small>
+
+      <label for="mdp2">Confirmer le mot de passe</label>
+      <input type="password" id="mdp2" name="mdp2" placeholder="Retapez le mot de passe" autocomplete="new-password">
+      <small class="message" id="mdp2-msg"></small>
+
+      <div class="cgv">
+        <input type="checkbox" id="consentement" name="consentement">
+        <label for="consentement">J'accepte que mes données soient utilisées pour traiter cette inscription.</label>
+      </div>
+      <small class="message" id="consentement-msg"></small>
+
+      <small class="message" id="form-msg"></small>
+
+      <button type="submit" class="valider">Valider l'inscription →</button>
+    </form>
+
+ 
+    <section class="recap" id="recap" aria-live="polite" hidden>
+      <h2>Inscription confirmée</h2>
+      <p>Numéro de dossier : <strong id="recap-dossier"></strong></p>
+      <p>Élève : <strong id="recap-eleve"></strong></p>
+      <ul id="recap-cours"></ul>
+      <p>Total mensuel : <strong id="recap-total"></strong></p>
+    </section>
+
+  </main>
+
+  <footer>
     <div class="footer-titre">
       <h3>Nour Academy</h3>
       <p>Inscription aux cours de soutien — Nador</p>
@@ -165,5 +143,6 @@
     <p class="copyright">© 2026 Nour Academy. Tous droits réservés.</p>
   </footer>
 
+<script src="js/data.js" defer></script>
 </body>
 </html>

@@ -22,10 +22,10 @@ function renderCourses(list) {
     const complet = c.places === 0;
     liste.innerHTML += `
       <article class="carte">
-        <h3>${c.title}</h3>
-        <p>${c.level}</p>
-        <p>${c.slot}</p>
-        <p>${c.price} MAD / mois</p>
+        <h3>${c.titre}</h3>
+        <p>${c.niveau}</p>
+        <p>${c.creneau}</p>
+        <p>${c.prix} MAD / mois</p>
         <p>${complet ? "Complet" : c.places + " places restantes"}</p>
         <button data-id="${c.id}" ${complet ? "disabled" : ""}>
           ${complet ? "Complet" : "Ajouter"}
